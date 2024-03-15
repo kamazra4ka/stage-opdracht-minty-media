@@ -14,13 +14,20 @@ const SearchComponent = () => {
 
     const [domain, setDomain] = React.useState('');
     const [searchResults, setSearchResults] = React.useState(null);
+    const [searchDomain, setSearchDomain] = React.useState(null);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await SearchHandler(domain);
+
+        const userDomain = response.searchDomain;
+        const searchResults = response.searchResults;
+
         console.log(response);
         setDomain('');
-        setSearchResults(response);
+        setSearchResults(searchResults);
+        setSearchDomain(userDomain);
     }
 
     return (
@@ -54,7 +61,7 @@ const SearchComponent = () => {
                 </form>
             </div>
         </div>
-         {searchResults && <SearchResultComponent results={searchResults} />}
+         {searchResults && <SearchResultComponent results={searchResults} domain={searchDomain} />}
         </CssVarsProvider>
     );
 };

@@ -1,4 +1,4 @@
-import axios, {isCancel, AxiosError} from 'axios';
+import axios from 'axios';
 
 export const SearchHandler = async (domain) => {
 
@@ -47,5 +47,32 @@ export const SearchHandler = async (domain) => {
         headers
     });
 
-    return response.data;
+    const searchDomain = domainName + '.' + domainExtension;
+
+    return {
+        searchDomain,
+        searchResults: response.data
+    };
+
+}
+
+export const CheckDomainHandler = async (domain) => {
+    // check one domain with a given extension after .
+    const domainName = domain.split('.')[0];
+    const domainExtension = domain.split('.')[1];
+
+    const headers = {
+        'Authorization': 'Basic f36a4c78c8b7f3782183cda40717f1d8e7d1981909fdd4c87c14e227548e11ed'
+    }
+
+    const response = await axios.post('http://localhost:8008/api/v2/domains/op/search', {
+        domains: [
+            {
+                name: domainName,
+                extension: domainExtension
+            }
+        ]
+    }, {
+        headers
+    });
 }
