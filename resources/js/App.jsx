@@ -1,10 +1,14 @@
 import NavbarComponent from "./Components/NavbarComponent.jsx";
+import SearchComponent from "./Components/SearchComponent.jsx";
 
 function App() {
 
   return (
       <div className="App">
-          <NavbarComponent />
+          <header>
+              <NavbarComponent />
+          </header>
+          <SearchComponent />
       </div>
   );
 }
