@@ -38,6 +38,8 @@ const WinkelwagenContentComponent = () => {
     let tax = totalPrice * 0.21;
     tax = tax.toFixed(2);
 
+    totalPrice = parseFloat(totalPrice) + parseFloat(tax);
+
     const handleSubmit = async () => {
         localStorage.setItem('winkelwagen', JSON.stringify([]));
 

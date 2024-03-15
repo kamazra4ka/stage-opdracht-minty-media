@@ -14,6 +14,8 @@ const BestellingenElementComponent = (props) => {
     let shoppingCart = props.shoppingCart;
     shoppingCart = JSON.parse(shoppingCart);
 
+    let totalPrice = parseFloat(props.totalPrice) + parseFloat(props.tax);
+
     return (
         <CssVarsProvider theme={theme}>
             <div className='bestellingen-results-element'>
@@ -45,7 +47,7 @@ const BestellingenElementComponent = (props) => {
                                 underline="none"
                                 sx={{color: 'text.tertiary'}}
                             >
-                                Totaal prijs: €{props.totalPrice} (incl. €{props.tax} btw)
+                                Totaal prijs: €{totalPrice} (incl. €{props.tax} btw)
                             </Link>
                         </Typography>
                         <div className="bestellingen-chip-container">
