@@ -1,0 +1,48 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.navbar {
+    background-color: #FFFFFF;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+}
+
+.navbar-left {
+    margin-left: 15%;
+}
+
+.navbar-left-brand {
+    color: #ff7f00;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-right {
+    margin-right: 15%;
+}
+
+.navbar-right-element {
+    color: #313131;
+    font-size: 1.2rem;
+
+    align-items: center;
+    margin-left: 35px;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.navbar-right-element:hover,
+.navbar-right-element:focus {
+    color: #ff7f00;
+}

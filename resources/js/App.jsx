@@ -1,10 +1,11 @@
+import NavbarComponent from "./Components/NavbarComponent.jsx";
 
 function App() {
 
   return (
-    <div className="App">
-    test
-    </div>
+      <div className="App">
+          <NavbarComponent />
+      </div>
   );
 }
 
