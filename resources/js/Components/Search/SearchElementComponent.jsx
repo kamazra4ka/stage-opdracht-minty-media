@@ -8,7 +8,12 @@ import Typography from '@mui/joy/Typography';
 import theme from "../../Theme/Primary.js";
 import {CssVarsProvider} from "@mui/joy";
 
-const SearchElementComponent = () => {
+const SearchElementComponent = (props) => {
+
+    const domainName = props.domainName;
+    const domainPrice = props.domainPrice;
+    const domainStatus = props.domainStatus;
+
     return (
         <CssVarsProvider
             theme={theme}
@@ -19,6 +24,11 @@ const SearchElementComponent = () => {
                     orientation="horizontal"
                     sx={{
                         width: '35vw',
+                        marginBottom: '1rem',
+                        '&:hover': {
+                            boxShadow: '0 0 10px #cb761c',
+                            transition: 'all 0.2s ease',
+                        },
                     }}
                 >
                     <AspectRatio ratio="1" sx={{ width: 90 }}>
@@ -30,7 +40,7 @@ const SearchElementComponent = () => {
                     </AspectRatio>
                     <CardContent>
                         <Typography level="title-lg" id="card-description">
-                            Domains.com
+                            {domainName}
                         </Typography>
                         <Typography level="body-sm" aria-describedby="card-description" mb={1}>
                             <Link
@@ -39,16 +49,16 @@ const SearchElementComponent = () => {
                                 href="#interactive-card"
                                 sx={{ color: 'text.tertiary' }}
                             >
-                                $12.99/year
+                                {domainPrice}
                             </Link>
                         </Typography>
                         <Chip
                             variant="outlined"
-                            color="primary"
-                            size="sm"
+                            color={domainStatus === 'Available' ? 'primary' : 'danger'}
+                            size="md"
                             sx={{ pointerEvents: 'none' }}
                         >
-                            Available
+                            {domainStatus}
                         </Chip>
                     </CardContent>
                 </Card>
