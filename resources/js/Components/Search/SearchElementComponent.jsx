@@ -90,7 +90,6 @@ const SearchElementComponent = (props) => {
                     orientation="horizontal"
                     onClick={() => handleClick()}
                     sx={{
-                        width: '35vw',
                         marginBottom: '1rem',
                         '&:hover': {
                             boxShadow: '0 0 10px ' + color,

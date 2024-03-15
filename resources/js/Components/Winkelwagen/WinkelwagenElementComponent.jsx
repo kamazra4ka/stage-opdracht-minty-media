@@ -31,7 +31,6 @@ const WinkelwagenElementComponent = (props) => {
                     orientation="horizontal"
                     onClick={() => deleteElement()}
                     sx={{
-                        width: '35vw',
                         marginBottom: '1rem',
                         '&:hover': {
                             boxShadow: '0 0 10px #ff7f00',
