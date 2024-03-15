@@ -13,6 +13,7 @@ const SearchElementComponent = (props) => {
     const domainName = props.domainName;
     const domainPrice = props.domainPrice;
     const domainStatus = props.domainStatus;
+    const color = domainStatus === 'Available' ? '#ff7f00' : '#ff0000'
 
     return (
         <CssVarsProvider
@@ -26,7 +27,7 @@ const SearchElementComponent = (props) => {
                         width: '35vw',
                         marginBottom: '1rem',
                         '&:hover': {
-                            boxShadow: '0 0 10px #cb761c',
+                            boxShadow: '0 0 10px ' + color,
                             transition: 'all 0.2s ease',
                         },
                     }}

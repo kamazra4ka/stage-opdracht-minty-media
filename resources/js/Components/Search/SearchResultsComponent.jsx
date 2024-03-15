@@ -30,6 +30,7 @@ const SearchResultsComponent = (props) => {
                         domainName={element.domain}
                         domainPrice={`€${element.price}/jaar`}
                         domainStatus={element.status === 'free' ? 'Available' : 'Not Available'}
+                        domainStatusColor={element.status === 'free' ? 'primary' : 'danger'}
                     />
                 ))}
             </div>
