@@ -1,5 +1,5 @@
 import React from 'react';
-import {CssVarsProvider} from "@mui/joy";
+import {CssVarsProvider, IconButton} from "@mui/joy";
 import theme from "../../Theme/Primary.js";
 import Card from "@mui/joy/Card";
 import AspectRatio from "@mui/joy/AspectRatio";
@@ -7,11 +7,21 @@ import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
 import Link from "@mui/joy/Link";
 import Chip from "@mui/joy/Chip";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const WinkelwagenElementComponent = (props) => {
 
     const domainName = props.domainName;
     const domainPrice = props.domainPrice;
+
+    const deleteElement = () => {
+        let shoppingCart = localStorage.getItem('winkelwagen');
+        shoppingCart = JSON.parse(shoppingCart);
+        shoppingCart = shoppingCart.filter((element) => element.domain !== domainName);
+        localStorage.setItem('winkelwagen', JSON.stringify(shoppingCart));
+
+        window.location.reload();
+    }
 
     return (
         <CssVarsProvider theme={theme}>
@@ -19,6 +29,7 @@ const WinkelwagenElementComponent = (props) => {
                 <Card
                     variant="outlined"
                     orientation="horizontal"
+                    onClick={() => deleteElement()}
                     sx={{
                         width: '35vw',
                         marginBottom: '1rem',
@@ -35,6 +46,16 @@ const WinkelwagenElementComponent = (props) => {
                             alt=""
                         />
                     </AspectRatio>
+                    <IconButton
+                        aria-label="bookmark Bahamas Islands"
+                        variant="plain"
+                        color="neutral"
+                        size="sm"
+                        onClick={() => deleteElement()}
+                        sx={{ position: 'absolute', top: '0.875rem', right: '0.5rem' }}
+                    >
+                        <DeleteIcon />
+                    </IconButton>
                     <CardContent>
                         <Typography level="title-lg" id="card-description">
                             {domainName}
