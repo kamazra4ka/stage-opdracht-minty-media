@@ -1,4 +1,5 @@
 import NavbarComponent from "../Components/NavbarComponent.jsx";
+import WinkelwagenContentComponent from "@/Components/Winkelwagen/WinkelwagenContentComponent.jsx";
 function Winkelwagen(props) {
 
     let userId = localStorage.getItem('userId');
@@ -11,6 +12,7 @@ function Winkelwagen(props) {
         <div className="App">
             <header>
                 <NavbarComponent active={props.active} />
+                <WinkelwagenContentComponent />
             </header>
         </div>
     );

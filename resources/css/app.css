@@ -8,6 +8,10 @@ body {
     margin: 0;
 }
 
+h1 {
+    font-weight: 500;
+}
+
 /* Navbar */
 
 .navbar {
@@ -78,4 +82,19 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+}
+
+/* Winkelwagen */
+
+.winkelwagen-content-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.winkelwagen-content-h1 {
+    font-size: 60px;
+    font-weight: 500;
+    color: #2b2f33;
 }
