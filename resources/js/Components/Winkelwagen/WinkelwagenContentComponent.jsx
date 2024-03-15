@@ -47,7 +47,7 @@ const WinkelwagenContentComponent = () => {
                     <WinkelwagenElementComponent
                         key={index}
                         domainName={element.domain}
-                        domainPrice={`${element.domainPrice}/jaar`}
+                        domainPrice={`${element.domainPrice}`}
                     />
                 ))}
                 <h1>BTW: ${tax}<br>
