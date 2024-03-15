@@ -6,9 +6,21 @@ const SearchResultsComponent = (props) => {
     if (!props || !props.results) {
         return null;
     } else {
-        console.log(props);
         let searchResults = props.results;
-        console.log(searchResults)
+
+        searchResults = searchResults.filter(element => element.status !== 'unavailable');
+
+        searchResults.sort((a, b) => {
+            if (a.status === 'free') {
+                return -1;
+            }
+            if (b.status === 'free') {
+                return 1;
+            }
+            return 0;
+        });
+
+        console.log(searchResults[0])
 
         return (
             <div className='search-results-container'>
@@ -16,8 +28,8 @@ const SearchResultsComponent = (props) => {
                     <SearchElementComponent
                         key={index}
                         domainName={element.domain}
-                        domainPrice={element.price}
-                        domainStatus={element.status}
+                        domainPrice={`€${element.price}/jaar`}
+                        domainStatus={element.status === 'free' ? 'Available' : 'Not Available'}
                     />
                 ))}
             </div>
