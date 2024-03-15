@@ -46,7 +46,6 @@ const SearchElementComponent = (props) => {
                             <Link
                                 overlay
                                 underline="none"
-                                href="#interactive-card"
                                 sx={{ color: 'text.tertiary' }}
                             >
                                 {domainPrice}
