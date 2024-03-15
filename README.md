@@ -2,7 +2,7 @@
 
 https://github.com/kamazra4ka/stage-opdracht-minty-media/assets/83513498/ec1b1229-a90c-4413-a991-ebbc16477398
 
-<img width="280" alt="image" src="https://github.com/kamazra4ka/stage-opdracht-minty-media/assets/83513498/005187a8-adf2-45bd-89d2-e8b7cb064282"> <img width="282" alt="image" src="https://github.com/kamazra4ka/stage-opdracht-minty-media/assets/83513498/1cc97df9-9ecf-4bf2-8ce0-967666c4265e"> <img width="285" alt="image" src="https://github.com/kamazra4ka/stage-opdracht-minty-media/assets/83513498/d7bc1205-d485-470d-a3d8-b264a7d082f7">
+<img width="280" alt="image" src="https://github.com/kamazra4ka/stage-opdracht-minty-media/assets/83513498/005187a8-adf2-45bd-89d2-e8b7cb064282"> <img width="282" alt="image" src="https://github.com/kamazra4ka/stage-opdracht-minty-media/assets/83513498/1cc97df9-9ecf-4bf2-8ce0-967666c4265e">
 
 ## Get started
 Clone dit project op je computer en voer de volgende commando's uit om het project lokaal te draaien:
