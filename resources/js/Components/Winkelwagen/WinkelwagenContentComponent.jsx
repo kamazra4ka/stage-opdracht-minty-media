@@ -78,8 +78,8 @@ const WinkelwagenContentComponent = () => {
                 ))}
                 <div className="winkelwagen-content-checkout-container">
                     <div className="winkelwagen-content-price-container">
-                        <h1>BTW (21%): ${tax}<br>
-                        </br>Jouw totaalprijs: ${totalPrice}</h1>
+                        <h1>BTW (21%): €{tax}<br>
+                        </br>Jouw totaalprijs: €{totalPrice}</h1>
                     </div>
                     <Button onClick={() => handleSubmit()} variant="outlined" color="primary" size="lg">
                         Afrekenen
