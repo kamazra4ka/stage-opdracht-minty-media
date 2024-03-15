@@ -7,6 +7,7 @@ import Button from '@mui/joy/Button';
 import {CssVarsProvider} from "@mui/joy";
 import theme from '../../Theme/Primary.js';
 import WinkelwagenElementComponent from "@/Components/Winkelwagen/WinkelwagenElementComponent.jsx";
+import axios from "axios";
 
 
 const WinkelwagenContentComponent = () => {
@@ -37,6 +38,19 @@ const WinkelwagenContentComponent = () => {
     let tax = totalPrice * 0.21;
     tax = tax.toFixed(2);
 
+    const handleSubmit = async () => {
+        localStorage.setItem('winkelwagen', JSON.stringify([]));
+
+        await axios.post('http://localhost:8008/api/order', {
+            userId: userId,
+            totalPrice: totalPrice,
+            tax: tax,
+            shoppingCart: shoppingCart
+        })
+
+        window.location.href = '/bestellingen';
+    }
+
     return (
         <CssVarsProvider
             theme={theme}
@@ -55,11 +69,10 @@ const WinkelwagenContentComponent = () => {
                         <h1>BTW (21%): ${tax}<br>
                         </br>Jouw totaalprijs: ${totalPrice}</h1>
                     </div>
-                    <Button variant="outlined" color="primary" size="lg">
+                    <Button onClick={() => handleSubmit()} variant="outlined" color="primary" size="lg">
                         Afrekenen
                     </Button>
                 </div>
-
             </div>
         </CssVarsProvider>
     );
