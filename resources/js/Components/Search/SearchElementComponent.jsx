@@ -6,7 +6,8 @@ import CardContent from '@mui/joy/CardContent';
 import Chip from '@mui/joy/Chip';
 import Typography from '@mui/joy/Typography';
 import theme from "../../Theme/Primary.js";
-import {CssVarsProvider, Snackbar} from "@mui/joy";
+import {CssVarsProvider, IconButton, Snackbar} from "@mui/joy";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const SearchElementComponent = (props) => {
 
@@ -104,6 +105,15 @@ const SearchElementComponent = (props) => {
                             alt=""
                         />
                     </AspectRatio>
+                    <IconButton
+                        aria-label="add"
+                        variant="plain"
+                        color="neutral"
+                        size="sm"
+                        sx={{ position: 'absolute', top: '0.875rem', right: '0.5rem' }}
+                    >
+                        <AddShoppingCartIcon />
+                    </IconButton>
                     <CardContent>
                         <Typography level="title-lg" id="card-description">
                             {domainName}

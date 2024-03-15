@@ -47,7 +47,7 @@ const WinkelwagenElementComponent = (props) => {
                         />
                     </AspectRatio>
                     <IconButton
-                        aria-label="bookmark Bahamas Islands"
+                        aria-label="delete"
                         variant="plain"
                         color="neutral"
                         size="sm"
