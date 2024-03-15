@@ -23,8 +23,8 @@ const BestellingenHistoryComponent = () => {
 
     console.log(ordersHistory);
 
-    if (ordersHistory.length > 7) {
-        ordersHistory.splice(7, ordersHistory.length - 7);
+    if (ordersHistory.length > 10) {
+        ordersHistory.splice(10, ordersHistory.length - 10);
     }
 
     if (!ordersHistory || ordersHistory.length === 0) {

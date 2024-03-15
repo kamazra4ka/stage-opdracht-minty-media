@@ -16,12 +16,11 @@ const BestellingenElementComponent = (props) => {
 
     return (
         <CssVarsProvider theme={theme}>
-            <div className='search-results-element'>
+            <div className='bestellingen-results-element'>
                 <Card
                     variant="outlined"
                     orientation="horizontal"
                     sx={{
-                        width: '65vw',
                         marginBottom: '1rem',
                         '&:hover': {
                             boxShadow: '0 0 10px #ff7f00',
