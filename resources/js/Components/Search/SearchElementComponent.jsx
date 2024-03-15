@@ -6,23 +6,70 @@ import CardContent from '@mui/joy/CardContent';
 import Chip from '@mui/joy/Chip';
 import Typography from '@mui/joy/Typography';
 import theme from "../../Theme/Primary.js";
-import {CssVarsProvider} from "@mui/joy";
+import {CssVarsProvider, Snackbar} from "@mui/joy";
 
 const SearchElementComponent = (props) => {
+
+    const [openSnackbar, setOpenSnackbar] = React.useState(false);
 
     const domainName = props.domainName;
     const domainPrice = props.domainPrice;
     const domainStatus = props.domainStatus;
     const color = domainStatus === 'Available' ? '#ff7f00' : '#ff0000'
 
+    const handleClick = async () => {
+
+        let domain = domainName;
+        let price = domainPrice;
+
+        let userId = localStorage.getItem('userId');
+        if (!userId) {
+            userId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+            localStorage.setItem('userId', userId);
+        }
+
+        const domainObject = {
+            domain, domainPrice: price
+        }
+
+        let shoppingCard = localStorage.getItem('winkelwagen');
+        if (!shoppingCard) {
+            shoppingCard = [];
+        } else {
+            shoppingCard = JSON.parse(shoppingCard);
+        }
+        shoppingCard.push(domainObject);
+
+        // remove duplicates
+        shoppingCard = shoppingCard.filter((v,i,a)=>a.findIndex(t=>(t.domain === v.domain))===i)
+
+        localStorage.setItem('winkelwagen', JSON.stringify(shoppingCard));
+
+        setOpenSnackbar(true);
+
+    }
+
     return (
         <CssVarsProvider
             theme={theme}
         >
+            <Snackbar
+                autoHideDuration={2000}
+                open={openSnackbar}
+                size='lg'
+                variant='outlined'
+                color='primary'
+                onClose={(event, reason) => {
+                    setOpenSnackbar(false);
+                }}
+            >
+                {domainName} is toegevoegd aan uw winkelwagen!
+            </Snackbar>
             <div className='search-results-element'>
                 <Card
                     variant="outlined"
                     orientation="horizontal"
+                    onClick={() => handleClick()}
                     sx={{
                         width: '35vw',
                         marginBottom: '1rem',
