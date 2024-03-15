@@ -5,7 +5,7 @@ import FormHelperText from '@mui/joy/FormHelperText';
 import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
 import {CssVarsProvider} from "@mui/joy";
-import theme from '../Theme/Primary.js';
+import theme from '../../Theme/Primary.js';
 
 
 const SearchComponent = () => {
@@ -27,7 +27,7 @@ const SearchComponent = () => {
                                     variant="solid"
                                     color="primary"
                                     type="submit"
-                                    sx={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0}}
+                                    sx={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0, fontSize: '1.2rem'}}
                                 >
                                     Search
                                 </Button>

@@ -1,5 +1,6 @@
 import NavbarComponent from "./Components/NavbarComponent.jsx";
-import SearchComponent from "./Components/SearchComponent.jsx";
+import SearchComponent from "./Components/Search/SearchComponent.jsx";
+import SearchResultsComponent from "./Components/Search/SearchResultsComponent.jsx";
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
               <NavbarComponent />
           </header>
           <SearchComponent />
+          <SearchResultsComponent />
       </div>
   );
 }
