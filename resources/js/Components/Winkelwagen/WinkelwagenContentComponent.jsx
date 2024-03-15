@@ -51,6 +51,18 @@ const WinkelwagenContentComponent = () => {
         window.location.href = '/bestellingen';
     }
 
+    if (shoppingCart.length === 0) {
+        return (
+            <CssVarsProvider
+                theme={theme}
+            >
+                <div className="winkelwagen-content-container">
+                    <h1 className="winkelwagen-content-h1">Jouw winkelwagen is nog leeg</h1>
+                </div>
+            </CssVarsProvider>
+        )
+    }
+
     return (
         <CssVarsProvider
             theme={theme}
