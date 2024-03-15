@@ -1,6 +1,8 @@
 <p align="center"><h1>Minty Stage opdracht Domein Zoeker</h1></p>
 
-Welkom bij de back-end opdracht. In deze opdracht ga je een 'Domein zoeker' maken. Een [end-user](https://en.wikipedia.org/wiki/End_user) moet een domein kunnen zoeken en een domein kunnen toevoegen aan zijn/haar winkelmand. Het design is bij deze opdracht niet van belang. Mocht je echter wel jouw design skills willen laten zien, mag dat natuurlijk altijd! :)
+https://github.com/kamazra4ka/stage-opdracht-minty-media/assets/83513498/ec1b1229-a90c-4413-a991-ebbc16477398
+
+<img width="280" alt="image" src="https://github.com/kamazra4ka/stage-opdracht-minty-media/assets/83513498/005187a8-adf2-45bd-89d2-e8b7cb064282"> <img width="282" alt="image" src="https://github.com/kamazra4ka/stage-opdracht-minty-media/assets/83513498/1cc97df9-9ecf-4bf2-8ce0-967666c4265e"> <img width="285" alt="image" src="https://github.com/kamazra4ka/stage-opdracht-minty-media/assets/83513498/d7bc1205-d485-470d-a3d8-b264a7d082f7">
 
 ## Get started
 Clone dit project op je computer en voer de volgende commando's uit om het project lokaal te draaien:
