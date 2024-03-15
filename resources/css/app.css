@@ -98,3 +98,12 @@ h1 {
     font-weight: 500;
     color: #2b2f33;
 }
+
+.winkelwagen-content-checkout-container {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.winkelwagen-content-price-container {
+    margin-right: auto;
+}

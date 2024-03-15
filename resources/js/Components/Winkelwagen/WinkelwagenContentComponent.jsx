@@ -50,8 +50,16 @@ const WinkelwagenContentComponent = () => {
                         domainPrice={`${element.domainPrice}`}
                     />
                 ))}
-                <h1>BTW: ${tax}<br>
-                </br>Your total is ${totalPrice}</h1>
+                <div className="winkelwagen-content-checkout-container">
+                    <div className="winkelwagen-content-price-container">
+                        <h1>BTW (21%): ${tax}<br>
+                        </br>Jouw totaalprijs: ${totalPrice}</h1>
+                    </div>
+                    <Button variant="outlined" color="primary" size="lg">
+                        Afrekenen
+                    </Button>
+                </div>
+
             </div>
         </CssVarsProvider>
     );
