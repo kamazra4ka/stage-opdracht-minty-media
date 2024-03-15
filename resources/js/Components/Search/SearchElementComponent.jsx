@@ -11,6 +11,7 @@ import {CssVarsProvider, Snackbar} from "@mui/joy";
 const SearchElementComponent = (props) => {
 
     const [openSnackbar, setOpenSnackbar] = React.useState(false);
+    const [openError, setOpenError] = React.useState(false);
 
     const domainName = props.domainName;
     const domainPrice = props.domainPrice;
@@ -21,6 +22,11 @@ const SearchElementComponent = (props) => {
 
         let domain = domainName;
         let price = domainPrice;
+
+        if (domainStatus !== 'Available') {
+            setOpenError(true);
+            return;
+        }
 
         let userId = localStorage.getItem('userId');
         if (!userId) {
@@ -64,6 +70,18 @@ const SearchElementComponent = (props) => {
                 }}
             >
                 {domainName} is toegevoegd aan uw winkelwagen!
+            </Snackbar>
+            <Snackbar
+                autoHideDuration={2000}
+                open={openError}
+                size='lg'
+                variant='outlined'
+                color='danger'
+                onClose={(event, reason) => {
+                    setOpenError(false);
+                }}
+            >
+                {domainName} is momenteel niet beschikbaar!
             </Snackbar>
             <div className='search-results-element'>
                 <Card
