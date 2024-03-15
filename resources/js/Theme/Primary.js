@@ -1,6 +1,9 @@
 import { extendTheme } from '@mui/joy/styles';
 
 const theme = extendTheme({
+    typography: {
+        fontFamily: 'Cabin, Arial',
+    },
     colorSchemes: {
         light: {
             palette: {

@@ -19,7 +19,7 @@ const SearchComponent = () => {
                 <form id="searchbar">
                     <FormControl>
                         <Input
-                            sx={{'--Input-decoratorChildHeight': '45px'}}
+                            sx={{'--Input-focused': 1, '--Input-decoratorChildHeight': '45px'}}
                             placeholder="Domains.nl"
                             type="text"
                             endDecorator={
