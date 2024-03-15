@@ -97,6 +97,7 @@ h1 {
     font-size: 60px;
     font-weight: 500;
     color: #2b2f33;
+    text-align: center;
 }
 
 .winkelwagen-content-checkout-container {
@@ -106,4 +107,11 @@ h1 {
 
 .winkelwagen-content-price-container {
     margin-right: auto;
+}
+
+/* Bestellingen */
+
+.bestellingen-chip-container {
+    display: flex;
+    gap: 5px;
 }

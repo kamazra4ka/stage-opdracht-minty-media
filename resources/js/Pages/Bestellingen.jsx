@@ -1,6 +1,7 @@
 import NavbarComponent from "../Components/NavbarComponent.jsx";
 import WinkelwagenContentComponent from "@/Components/Winkelwagen/WinkelwagenContentComponent.jsx";
-function Winkelwagen(props) {
+import BestellingenHistoryComponent from "@/Components/Bestellingen/BestellingenHistoryComponent.jsx";
+function Bestellingen(props) {
 
     let userId = localStorage.getItem('userId');
     if (!userId) {
@@ -13,9 +14,9 @@ function Winkelwagen(props) {
             <header>
                 <NavbarComponent active={props.active} />
             </header>
-            <WinkelwagenContentComponent />
+            <BestellingenHistoryComponent />
         </div>
     );
 }
 
-export default Winkelwagen;
+export default Bestellingen;

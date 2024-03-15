@@ -9,6 +9,7 @@ import {
 
 import App from './Pages/App.jsx';
 import Winkelwagen from "./Pages/Winkelwagen.jsx";
+import Bestellingen from "@/Pages/Bestellingen.jsx";
 
 
 const router = createBrowserRouter([
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/bestellingen',
-        element: <div>Bestellingen</div>,
+        element: <Bestellingen active='/bestellingen' />,
     },
 ]);
 
