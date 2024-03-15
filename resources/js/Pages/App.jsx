@@ -1,8 +1,7 @@
-import NavbarComponent from "./Components/NavbarComponent.jsx";
-import SearchComponent from "./Components/Search/SearchComponent.jsx";
-import SearchResultsComponent from "./Components/Search/SearchResultsComponent.jsx";
-
-function App() {
+import NavbarComponent from "../Components/NavbarComponent.jsx";
+import SearchComponent from "../Components/Search/SearchComponent.jsx";
+import SearchResultsComponent from "../Components/Search/SearchResultsComponent.jsx";
+function App(props) {
 
     let userId = localStorage.getItem('userId');
     if (!userId) {
@@ -13,7 +12,7 @@ function App() {
   return (
       <div className="App">
           <header>
-              <NavbarComponent />
+              <NavbarComponent active={props.active} />
           </header>
           <SearchComponent />
           <SearchResultsComponent />

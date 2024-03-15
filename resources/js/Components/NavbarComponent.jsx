@@ -1,11 +1,14 @@
 import React from 'react';
 
-const NavbarComponent = () => {
+const NavbarComponent = (props) => {
+
+    const active = props.active;
+    console.log(active)
 
     const navElements = [
-        { href: '/domeinen', text: 'Domeinen' },
-        { href: '/winkelwagen', text: 'Winkelwagen' },
-        { href: '/bestellingen', text: 'Bestellingen' },
+        {href: '/domeinen', text: 'Domeinen'},
+        {href: '/winkelwagen', text: 'Winkelwagen'},
+        {href: '/bestellingen', text: 'Bestellingen'},
     ];
 
     return (
@@ -15,7 +18,11 @@ const NavbarComponent = () => {
             </div>
             <div className="navbar-right">
                 {navElements.map((element, index) => (
-                    <a key={index} className='navbar-right-element' href={element.href}>{element.text}</a>
+                    <a key={index}
+                       className={"navbar-right-element " + (active === element.href ? 'active' : '')}
+                       href={element.href}>
+                        {element.text}
+                    </a>
                 ))}
             </div>
         </div>
