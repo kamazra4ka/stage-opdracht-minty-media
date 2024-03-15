@@ -15,16 +15,19 @@ const SearchComponent = () => {
     const [domain, setDomain] = React.useState('');
     const [searchResults, setSearchResults] = React.useState(null);
     const [searchDomain, setSearchDomain] = React.useState(null);
+    const [searchText, setSearchText] = React.useState('Search');
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setSearchText('Loading...');
+
         const response = await SearchHandler(domain);
+        setSearchText('Search');
 
         const userDomain = response.searchDomain;
         const searchResults = response.searchResults;
 
-        console.log(response);
         setDomain('');
         setSearchResults(searchResults);
         setSearchDomain(userDomain);
@@ -53,7 +56,7 @@ const SearchComponent = () => {
                                     onClick={handleSubmit}
                                     sx={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0, fontSize: '1.2rem'}}
                                 >
-                                    Search
+                                    {searchText}
                                 </Button>
                             }
                         />
